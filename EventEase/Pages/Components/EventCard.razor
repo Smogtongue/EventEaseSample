@@ -1,0 +1,16 @@
+@* Pages/Components/EventCard.razor *@
+@using EventEase.Pages.Models
+
+<div class="event-card">
+    @if (Event != null)
+    {
+        <h2>@Event.Name</h2>
+        <p>@Event.Date</p>
+        <p>@Event.Location</p>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public Event? Event { get; set; }
+}

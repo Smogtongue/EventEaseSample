@@ -1,0 +1,32 @@
+@page "/events"
+
+@using EventEase.Pages.Models
+@using EventEase.Pages.Components
+
+<h1>Event List</h1>
+
+@if (Events == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    @foreach (var eventItem in Events)
+    {
+        <a href="/event/@eventItem.Id">
+            <EventCard Event="eventItem" />
+        </a>
+    }
+}
+
+@code {
+    private List<Event> Events = new List<Event>
+    {
+        new Event { Id = 1, Name = "Corporate Meetup", Date = "2025-03-01", Location = "Seattle, WA", Description = "A meetup for corporate professionals to network and share knowledge." },
+        new Event { Id = 2, Name = "Product Launch", Date = "2025-04-15", Location = "San Francisco, CA", Description = "Launch event for our latest product with industry leaders and media." },
+        new Event { Id = 3, Name = "Charity Gala", Date = "2025-05-22", Location = "New York, NY", Description = "A gala event to raise funds for charity with live performances and auctions." },
+        new Event { Id = 4, Name = "Tech Conference", Date = "2025-06-10", Location = "Austin, TX", Description = "A conference for tech enthusiasts to learn about the latest trends and technologies." },
+        new Event { Id = 5, Name = "Music Festival", Date = "2025-07-20", Location = "Chicago, IL", Description = "A festival featuring live music performances from various artists and bands." },
+        new Event { Id = 6, Name = "Art Exhibition", Date = "2025-08-15", Location = "Los Angeles, CA", Description = "An exhibition showcasing contemporary art from local and international artists." }
+    };
+}

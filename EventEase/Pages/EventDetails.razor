@@ -1,0 +1,29 @@
+@page "/event/{id:int}"
+
+@using EventEase.Pages.Models
+
+@if (Event != null)
+{
+    <h1>@Event.Name</h1>
+    <p>Date: @Event.Date</p>
+    <p>Location: @Event.Location</p>
+    <p>Description: @Event.Description</p>
+}
+else
+{
+    <p>Event not found.</p>
+}
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Event? Event => Events.FirstOrDefault(e => e.Id == Id);
+
+    private List<Event> Events = new List<Event>
+    {
+        new Event { Id = 1, Name = "Corporate Meetup", Date = "2025-03-01", Location = "Seattle, WA", Description = "A meetup for corporate professionals to network and share knowledge." },
+        new Event { Id = 2, Name = "Product Launch", Date = "2025-04-15", Location = "San Francisco, CA", Description = "Launch event for our latest product with industry leaders and media." },
+        new Event { Id = 3, Name = "Charity Gala", Date = "2025-05-22", Location = "New York, NY", Description = "A gala event to raise funds for charity with live performances and auctions." },
+    };
+}

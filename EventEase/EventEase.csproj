@@ -1,0 +1,16 @@
+<!-- filepath: /c:/Users/elzof/Blazor EventApp/EventEase/EventEase.csproj -->
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <BlazorWebAssemblyEnableHotReload>true</BlazorWebAssemblyEnableHotReload>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.1" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

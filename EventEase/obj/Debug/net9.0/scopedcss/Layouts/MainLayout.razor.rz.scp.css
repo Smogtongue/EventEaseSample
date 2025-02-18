@@ -1,0 +1,14 @@
+/* Shared/MainLayout.razor.css */
+.main-layout[b-j37xcno0hq] {
+    display: flex;
+}
+
+.sidebar[b-j37xcno0hq] {
+    width: 250px;
+    background-color: #414141;
+}
+
+.content[b-j37xcno0hq] {
+    flex-grow: 1;
+    padding: 16px;
+}
