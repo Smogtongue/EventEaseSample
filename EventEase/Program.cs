@@ -15,3 +15,5 @@ namespace EventEase
         }
     }
 }
+
+// I may have forgotten to connect git before debugging...//
