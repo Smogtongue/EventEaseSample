@@ -28,16 +28,28 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/elzof/Blazor EventApp/EventEase/Pages/AddEvent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkRXZlbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elzof/Blazor EventApp/EventEase/Pages/Components/EventCard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xFdmVudENhcmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/elzof/Blazor EventApp/EventEase/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/elzof/Blazor EventApp/EventEase/Pages/EventDetails.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnREZXRhaWxzLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/elzof/Blazor EventApp/EventEase/Pages/EventList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elzof/Blazor EventApp/EventEase/Pages/EventListEvents.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRMaXN0RXZlbnRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/elzof/Blazor EventApp/EventEase/Pages/Events.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/elzof/Blazor EventApp/EventEase/Pages/Home.razor]
@@ -52,14 +64,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/elzof/Blazor EventApp/EventEase/Layouts/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0c1xNYWluTGF5b3V0LnJhem9y
-build_metadata.AdditionalFiles.CssScope = b-j37xcno0hq
+[C:/Users/elzof/Blazor EventApp/EventEase/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-72osl0plp5
 
-[C:/Users/elzof/Blazor EventApp/EventEase/Layouts/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0c1xOYXZNZW51LnJhem9y
-build_metadata.AdditionalFiles.CssScope = b-rcjz50v29h
-
-[C:/Users/elzof/Blazor EventApp/EventEase/Pages/Components/EventCard.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xFdmVudENhcmQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-b7ejhdhab9
+[C:/Users/elzof/Blazor EventApp/EventEase/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-z2ef545u2c

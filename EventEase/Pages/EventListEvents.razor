@@ -1,0 +1,59 @@
+// EventListEvents.razor (in the Pages folder)
+@using EventPlanner.Models
+@inject IJSRuntime JSRuntime //for the alerts
+@inherits OwningComponentBase
+<CascadingValue Value="this">
+    @Body
+</CascadingValue>
+
+@code{
+
+    private List<Event> events = new();
+
+    [Parameter]
+    public RenderFragment? Body { get; set; }
+
+    public void AddEvent(Event newEvent)
+    {
+        if (newEvent == null)
+        {
+            // Log an error or handle the null event appropriately.
+            return;
+        }
+
+        // Add the new event to your list
+        events.Add(newEvent);
+
+    }
+
+    // Method to get the current list of events
+    public List<Event> GetEvents()
+    {
+        return events;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Simulate an asynchronous operation, such as loading events from a database or API
+        await Task.Delay(1000);
+
+        //Load the events from a database or API, for demonstration
+        events = await LoadEventsAsync();
+    }
+
+    private async Task<List<Event>> LoadEventsAsync()
+    {
+        // Simulate loading events from a database or API
+        await Task.Delay(500); // Simulate delay
+        return new List<Event>
+        {
+            new Event
+            {
+                Name = "Initial Team Meeting",
+                Date = DateTime.Now.AddDays(2),
+                Time = new TimeSpan(14, 0, 0), // 2:00 PM
+                Description = "Discuss initial project plan."
+            }
+        };
+    }
+}

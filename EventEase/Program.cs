@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
+using EventEase.Services;
 
 namespace EventEase
 {
@@ -11,9 +12,9 @@ namespace EventEase
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
 
+            builder.Services.AddSingleton<EventService>();
+
             await builder.Build().RunAsync();
         }
     }
 }
-
-// I may have forgotten to connect git before debugging...//

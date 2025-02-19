@@ -1,12 +1,12 @@
-﻿@* App.razor *@
-<Router AppAssembly="@typeof(App).Assembly">
+﻿<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(EventEase.Layouts.MainLayout)" />
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
     <NotFound>
-        <LayoutView Layout="@typeof(EventEase.Layouts.MainLayout)">
-            <p>Sorry, there's nothing at this address.</p>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p role="alert">Sorry, there's nothing at this address.</p>
         </LayoutView>
     </NotFound>
 </Router>
