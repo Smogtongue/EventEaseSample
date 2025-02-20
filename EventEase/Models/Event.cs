@@ -17,5 +17,8 @@ namespace EventEase.Models
 
         [Required(ErrorMessage = "Event Description is required")]
         public required string Description { get; set; }
+
+        [Required(ErrorMessage = "Presented By is required")]
+        public required string PresentedBy { get; set; }
     }
 }

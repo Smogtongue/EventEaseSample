@@ -1,5 +1,6 @@
-@page "/eventdetails/{id:int}"
+@page "/eventdetails/{eventName}/{presentedBy}"
 @inject EventEase.Services.EventService EventService
+@using EventEase.Models
 
 <h3>Event Details</h3>
 
@@ -10,6 +11,7 @@
         <p>Date: @eventDetails.Date.ToShortDateString()</p>
         <p>Location: @eventDetails.Location</p>
         <p>Description: @eventDetails.Description</p>
+        <p>Presented By: @eventDetails.PresentedBy</p>
     </div>
 }
 else
@@ -19,22 +21,15 @@ else
 
 @code {
     [Parameter]
-    public int id { get; set; }
+    public required string eventName { get; set; }
 
-    public required EventEase.Models.Event eventDetails { get; set; } = new EventEase.Models.Event
-    {
-        Name = string.Empty,
-        Location = string.Empty,
-        Description = string.Empty
-    };
+    [Parameter]
+    public required string presentedBy { get; set; }
+
+    private Event? eventDetails;
 
     protected override void OnInitialized()
     {
-        eventDetails = EventService.GetEventById(id) ?? new EventEase.Models.Event
-        {
-            Name = string.Empty,
-            Location = string.Empty,
-            Description = string.Empty
-        };
+        eventDetails = EventService.GetEvents().FirstOrDefault(e => e.Name == eventName && e.PresentedBy == presentedBy);
     }
 }

@@ -3,34 +3,52 @@
 @using EventEase.Models
 @using Microsoft.AspNetCore.Components.Forms
 
-<h3>Register New Event</h3>
+@if (isEventConfirmed)
+{
+    <div class="form-container">
+        <h3 class="form-title">Event Confirmed</h3>
+        <p>Your event has been successfully submitted to the event list.</p>
+        <button class="btn btn-primary" @onclick="ResetForm">Register Another Event</button>
+    </div>
+}
+else
+{
+    <div class="form-container">
+        <h3 class="form-title">Register New Event</h3>
 
-<EditForm Model="newEvent" OnValidSubmit="HandleValidSubmit">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
+        <EditForm Model="newEvent" OnValidSubmit="HandleValidSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
 
-    <div class="form-group">
-        <label for="name">Event Name</label>
-        <InputText id="name" class="form-control" @bind-Value="newEvent.Name" />
-        <ValidationMessage For="@(() => newEvent.Name)" />
+            <div class="form-group">
+                <label for="name">Event Name</label>
+                <InputText id="name" class="form-control" @bind-Value="newEvent.Name" />
+                <ValidationMessage For="@(() => newEvent.Name)" />
+            </div>
+            <div class="form-group">
+                <label for="date">Event Date</label>
+                <InputDate id="date" class="form-control" @bind-Value="newEvent.Date" />
+                <ValidationMessage For="@(() => newEvent.Date)" />
+            </div>
+            <div class="form-group">
+                <label for="location">Event Location</label>
+                <InputText id="location" class="form-control" @bind-Value="newEvent.Location" />
+                <ValidationMessage For="@(() => newEvent.Location)" />
+            </div>
+            <div class="form-group">
+                <label for="description">Event Description</label>
+                <InputTextArea id="description" class="form-control" @bind-Value="newEvent.Description" />
+                <ValidationMessage For="@(() => newEvent.Description)" />
+            </div>
+            <div class="form-group">
+                <label for="presentedBy">Presented By</label>
+                <InputText id="presentedBy" class="form-control" @bind-Value="newEvent.PresentedBy" />
+                <ValidationMessage For="@(() => newEvent.PresentedBy)" />
+            </div>
+            <button type="submit" class="btn btn-primary">Register Event</button>
+        </EditForm>
     </div>
-    <div class="form-group">
-        <label for="date">Event Date</label>
-        <InputDate id="date" class="form-control" @bind-Value="newEvent.Date" />
-        <ValidationMessage For="@(() => newEvent.Date)" />
-    </div>
-    <div class="form-group">
-        <label for="location">Event Location</label>
-        <InputText id="location" class="form-control" @bind-Value="newEvent.Location" />
-        <ValidationMessage For="@(() => newEvent.Location)" />
-    </div>
-    <div class="form-group">
-        <label for="description">Event Description</label>
-        <InputTextArea id="description" class="form-control" @bind-Value="newEvent.Description" />
-        <ValidationMessage For="@(() => newEvent.Description)" />
-    </div>
-    <button type="submit" class="btn btn-primary">Register Event</button>
-</EditForm>
+}
 
 @code {
     private Event newEvent = new Event
@@ -38,18 +56,28 @@
         Name = string.Empty,
         Date = DateTime.Now,
         Location = string.Empty,
-        Description = string.Empty
+        Description = string.Empty,
+        PresentedBy = string.Empty // Initialize PresentedBy
     };
+
+    private bool isEventConfirmed = false;
 
     private void HandleValidSubmit()
     {
         EventService.AddEvent(newEvent);
+        isEventConfirmed = true;
+    }
+
+    private void ResetForm()
+    {
         newEvent = new Event
         {
             Name = string.Empty,
             Date = DateTime.Now,
             Location = string.Empty,
-            Description = string.Empty
+            Description = string.Empty,
+            PresentedBy = string.Empty // Reset PresentedBy
         };
+        isEventConfirmed = false;
     }
 }

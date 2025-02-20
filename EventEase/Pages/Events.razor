@@ -1,0 +1,42 @@
+@page "/events"
+@inject EventEase.Services.EventService EventService
+@inject NavigationManager NavigationManager
+@using EventEase.Models
+
+<h3>Events</h3>
+
+@foreach (var eventItem in EventService.GetEvents())
+{
+    <div class="event-container">
+        <div class="event-title">@eventItem.Name</div>
+        <div class="event-details">
+            <p><strong>Date:</strong> @eventItem.Date.ToShortDateString()</p>
+            <p><strong>Location:</strong> @eventItem.Location</p>
+            <p><strong>Presented By:</strong> @eventItem.PresentedBy</p>
+            <button class="btn btn-primary" @onclick="() => NavigateToEventDetails(eventItem.Name, eventItem.PresentedBy)">View Details</button>
+        </div>
+    </div>
+}
+
+@code {
+    public required List<Event> events { get; set; }
+
+    protected override void OnInitialized()
+    {
+        events = EventService.GetEvents();
+    }
+
+    private void NavigateToEventDetails(string eventName, string presentedBy)
+    {
+        if (string.IsNullOrEmpty(eventName) || string.IsNullOrEmpty(presentedBy))
+        {
+            // Handle the case where eventName or presentedBy is null or empty
+            return;
+        }
+
+        var encodedName = Uri.EscapeDataString(eventName);
+        var encodedPresentedBy = Uri.EscapeDataString(presentedBy);
+        var url = $"/eventdetails/{encodedName}/{encodedPresentedBy}";
+        NavigationManager.NavigateTo(url);
+    }
+}

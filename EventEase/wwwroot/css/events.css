@@ -1,0 +1,18 @@
+.event-container {
+    background-color: #424242; /* Darker Grey */
+    border: 1px solid #616161;
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-title {
+    font-size: 1.5rem;
+    color: #E0E0E0; /* Light Grey */
+    margin-bottom: 0.5rem;
+}
+
+.event-details {
+    color: #E0E0E0; /* Light Grey */
+}
