@@ -1,0 +1,23 @@
+@page "/events"
+@inject EventEase.Services.EventService EventService
+
+<h3>Event List</h3>
+
+<ul>
+    @foreach (var eventItem in events)
+    {
+        <li>
+            <a href="@($"/eventdetails/{eventItem.Id}")">@eventItem.Name</a> - @eventItem.Date.ToShortDateString() - @eventItem.Location
+            <p>@eventItem.Description</p>
+        </li>
+    }
+</ul>
+
+@code {
+    public required List<EventEase.Models.Event> events { get; set; }
+
+    protected override void OnInitialized()
+    {
+        events = EventService.GetEvents();
+    }
+}

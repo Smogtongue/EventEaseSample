@@ -1,0 +1,55 @@
+@page "/register"
+@inject EventEase.Services.EventService EventService
+@using EventEase.Models
+@using Microsoft.AspNetCore.Components.Forms
+
+<h3>Register New Event</h3>
+
+<EditForm Model="newEvent" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="name">Event Name</label>
+        <InputText id="name" class="form-control" @bind-Value="newEvent.Name" />
+        <ValidationMessage For="@(() => newEvent.Name)" />
+    </div>
+    <div class="form-group">
+        <label for="date">Event Date</label>
+        <InputDate id="date" class="form-control" @bind-Value="newEvent.Date" />
+        <ValidationMessage For="@(() => newEvent.Date)" />
+    </div>
+    <div class="form-group">
+        <label for="location">Event Location</label>
+        <InputText id="location" class="form-control" @bind-Value="newEvent.Location" />
+        <ValidationMessage For="@(() => newEvent.Location)" />
+    </div>
+    <div class="form-group">
+        <label for="description">Event Description</label>
+        <InputTextArea id="description" class="form-control" @bind-Value="newEvent.Description" />
+        <ValidationMessage For="@(() => newEvent.Description)" />
+    </div>
+    <button type="submit" class="btn btn-primary">Register Event</button>
+</EditForm>
+
+@code {
+    private Event newEvent = new Event
+    {
+        Name = string.Empty,
+        Date = DateTime.Now,
+        Location = string.Empty,
+        Description = string.Empty
+    };
+
+    private void HandleValidSubmit()
+    {
+        EventService.AddEvent(newEvent);
+        newEvent = new Event
+        {
+            Name = string.Empty,
+            Date = DateTime.Now,
+            Location = string.Empty,
+            Description = string.Empty
+        };
+    }
+}

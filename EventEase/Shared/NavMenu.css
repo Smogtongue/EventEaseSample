@@ -1,0 +1,25 @@
+.nav.flex-column {
+    padding-left: 0;
+    list-style: none;
+}
+
+.nav-item {
+    margin-bottom: 10px;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background-color: #e9ecef;
+    color: #0056b3;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: #0056b3;
+}
