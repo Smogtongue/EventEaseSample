@@ -7,21 +7,30 @@ namespace EventEase.Services
         public string UserName { get; private set; } = string.Empty; // Initialize UserName
         public DateTime SessionStartTime { get; private set; }
 
+        public event Action? OnSessionChanged;
+
         public void StartSession(string userName)
         {
             UserName = userName;
             SessionStartTime = DateTime.Now;
+            NotifySessionChanged();
         }
 
         public void EndSession()
         {
-            UserName = string.Empty; // Set UserName to an empty string instead of null
+            UserName = string.Empty; // Clear UserName
             SessionStartTime = DateTime.MinValue;
+            NotifySessionChanged();
         }
 
         public bool IsSessionActive()
         {
             return !string.IsNullOrEmpty(UserName);
+        }
+
+        private void NotifySessionChanged()
+        {
+            OnSessionChanged?.Invoke();
         }
     }
 }

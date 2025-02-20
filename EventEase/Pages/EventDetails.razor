@@ -1,5 +1,7 @@
 @page "/eventdetails/{eventName}/{presentedBy}"
 @inject EventEase.Services.EventService EventService
+@inject EventEase.Services.AttendanceService AttendanceService
+@inject EventEase.Services.UserSessionService UserSessionService
 @using EventEase.Models
 
 <h3>Event Details</h3>
@@ -12,6 +14,18 @@
         <p>Location: @eventDetails.Location</p>
         <p>Description: @eventDetails.Description</p>
         <p>Presented By: @eventDetails.PresentedBy</p>
+        <p>Attendance: @AttendanceService.GetAttendanceCount(eventDetails.Id)</p>
+        @if (UserSessionService.IsSessionActive())
+        {
+            @if (isUserAttending)
+            {
+                <button class="btn btn-secondary" @onclick="RemoveAttendance">Nevermind</button>
+            }
+            else
+            {
+                <button class="btn btn-primary" @onclick="RegisterAttendance">I'd like to attend</button>
+            }
+        }
     </div>
 }
 else
@@ -27,9 +41,33 @@ else
     public required string presentedBy { get; set; }
 
     private Event? eventDetails;
+    private bool isUserAttending;
 
     protected override void OnInitialized()
     {
         eventDetails = EventService.GetEvents().FirstOrDefault(e => e.Name == eventName && e.PresentedBy == presentedBy);
+
+        if (eventDetails != null && UserSessionService.IsSessionActive())
+        {
+            isUserAttending = AttendanceService.IsUserAttending(eventDetails.Id, UserSessionService.UserName);
+        }
+    }
+
+    private void RegisterAttendance()
+    {
+        if (eventDetails != null && UserSessionService.IsSessionActive())
+        {
+            AttendanceService.RegisterAttendance(eventDetails.Id, UserSessionService.UserName);
+            isUserAttending = true;
+        }
+    }
+
+    private void RemoveAttendance()
+    {
+        if (eventDetails != null && UserSessionService.IsSessionActive())
+        {
+            AttendanceService.RemoveAttendance(eventDetails.Id, UserSessionService.UserName);
+            isUserAttending = false;
+        }
     }
 }
