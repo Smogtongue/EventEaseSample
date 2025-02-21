@@ -24,7 +24,8 @@
 <h2>Login Session Tracking + Logout Button</h2>
 <img src= "https://github.com/Smogtongue/EventEaseSample/blob/4349c56679e20d8a1c8d08b4ee88b1b7b24f4f7c/EventEase/Pictures/UserSessionStartDisplay%2BLogoutButton.png">
 
-<h2>Attendance Tracker: Interested/Nevermind Functions</h2>
+<h2>Event Details Page - Attendance Tracker: Interested/Nevermind Functions</h2>
+<h3>Not pictured: url handling logic for displaying event details by pulling in the event name and what company is presenting it.</h3>
 <img src= "https://github.com/Smogtongue/EventEaseSample/blob/4349c56679e20d8a1c8d08b4ee88b1b7b24f4f7c/EventEase/Pictures/EventDetailsPage-AttendanceTracker.png">
 <img src= "https://github.com/Smogtongue/EventEaseSample/blob/4349c56679e20d8a1c8d08b4ee88b1b7b24f4f7c/EventEase/Pictures/EventDetailsPageAttendanceNevermind.png">
 
