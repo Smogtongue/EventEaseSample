@@ -1073,10 +1073,10 @@ C:\Users\elzof\Blazor EventApp\EventEase\obj\Debug\net9.0\EventEase.dll
 C:\Users\elzof\Blazor EventApp\EventEase\obj\Debug\net9.0\refint\EventEase.dll
 C:\Users\elzof\Blazor EventApp\EventEase\obj\Debug\net9.0\EventEase.pdb
 C:\Users\elzof\Blazor EventApp\EventEase\obj\Debug\net9.0\ref\EventEase.dll
-C:\Users\elzof\Blazor EventApp\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.dz4mk9uy1r.pdb
-C:\Users\elzof\Blazor EventApp\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.k421uclqie.wasm
-C:\Users\elzof\Blazor EventApp\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.k421uclqie.wasm.gz
-C:\Users\elzof\Blazor EventApp\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.dz4mk9uy1r.pdb.gz
-C:\Users\elzof\Blazor EventApp\EventEase\obj\Debug\net9.0\compressed\gqx5ofl3a7-k421uclqie.gz
-C:\Users\elzof\Blazor EventApp\EventEase\obj\Debug\net9.0\compressed\lw84d9mf51-dz4mk9uy1r.gz
-C:\Users\elzof\Blazor EventApp\EventEase\obj\Debug\net9.0\compressed\pqrel3z3dc-7yf4awceul.gz
+C:\Users\elzof\Blazor EventApp\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.kygtgkucta.pdb
+C:\Users\elzof\Blazor EventApp\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.cccion6ill.wasm
+C:\Users\elzof\Blazor EventApp\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.cccion6ill.wasm.gz
+C:\Users\elzof\Blazor EventApp\EventEase\bin\Debug\net9.0\wwwroot\_framework\EventEase.kygtgkucta.pdb.gz
+C:\Users\elzof\Blazor EventApp\EventEase\obj\Debug\net9.0\compressed\gqx5ofl3a7-cccion6ill.gz
+C:\Users\elzof\Blazor EventApp\EventEase\obj\Debug\net9.0\compressed\lw84d9mf51-kygtgkucta.gz
+C:\Users\elzof\Blazor EventApp\EventEase\obj\Debug\net9.0\compressed\pqrel3z3dc-okf6kv6iiw.gz
